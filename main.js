@@ -69,6 +69,11 @@ function Start() {
     document.addEventListener("keydown", HandleKeyDown);
     document.addEventListener("click", Saltar());
     santa.classList.add("santa-corriendo");
+    if(parado  ==true){
+        santa.classList.remove("santa-corriendo");
+    }else{
+        document.addEventListener("click", Saltar());
+    }
 
 }
 function Update() {
@@ -122,7 +127,7 @@ function MoverSuelo() {
     suelo.style.left = -(sueloX % contenedor.clientWidth) + "px";
 }
 function MoverBG(){
-    sueloX +=1;
+    sueloX +=0.3;
     bg.style.left = -(sueloX % contenedor.clientWidth) + "px";
 }
 
