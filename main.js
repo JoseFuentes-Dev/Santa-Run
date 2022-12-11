@@ -57,6 +57,7 @@ let suelo;
 let gameOver;
 let bg;
 let btn;
+let over;
 
 function Start() {
     gameOver = document.querySelector(".game-over");
@@ -66,6 +67,7 @@ function Start() {
     textoScore = document.querySelector(".score");
     santa = document.querySelector(".santa");
     bg = document.querySelector(".bg");
+    over = document.querySelector(".overbg");
     document.addEventListener("keydown", HandleKeyDown);
     document.addEventListener("click", Saltar());
     santa.classList.add("santa-corriendo");
@@ -193,7 +195,7 @@ function GameOver() {
     Estrellarse();
     gameOver.style.bottom = "-80px";
     btn.style.bottom="100px";
-    contenedor.style.backgroundColor='#900';
+    over.style.bottom="0";
 
 }
 

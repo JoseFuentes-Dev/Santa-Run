@@ -30,6 +30,17 @@ body{
     border-radius: 20px;
     box-shadow: 6px 10px 20px  rgba(0, 0, 0, .7);
 }
+.overbg{
+
+    width: 100%;
+    position: absolute;
+    height: 300px;
+    z-index: 15;
+    background: rgba(0, 0, 0, .4);
+   bottom: -100%;
+   transition: all 1s ease;
+}
+
 .santa {
     width: 84px;
     height: 84px;
@@ -115,12 +126,12 @@ body{
    left: 0;
   bottom: -100%;
    right: 0;
-   z-index: 10;
+   z-index: 60;
 transition: all 1s ease;
 }
 img{
     width: 500px;
-    z-index: 10;
+    z-index: 20;
 
 }
 .restart{
@@ -134,7 +145,7 @@ img{
    border: none;
    background: rgba(0, 0, 0, 0);
    font-size: 1em;
-z-index: 20;
+z-index: 60;
 color: #fff;
 cursor: pointer;
 transition: all 1s ease;
