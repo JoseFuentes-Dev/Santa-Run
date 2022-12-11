@@ -7,7 +7,7 @@ let deltaTime = 0;
 if(document.readyState === "complete" || document.readyState === "interactive"){
     setTimeout(Init, 1);
 }else{
-    document.addEventListener("DOMContentLoaded", Init); 
+    document.addEventListener("click", Init); 
 }
 
 function Init() {
@@ -30,8 +30,8 @@ let velY = 0;
 let impulso = 900;
 let gravedad = 2500;
 
-let dinoPosX = 42;
-let dinoPosY = sueloY; 
+let santaPosX = 42;
+let santaPosY = sueloY; 
 
 let sueloX = 0;
 let velEscenario = 1280/3;
@@ -48,7 +48,7 @@ let obstaculoPosY = 16;
 let obstaculos = [];
 
 let contenedor;
-let dino;
+let santa;
 let textoScore;
 let suelo;
 let gameOver;
@@ -61,7 +61,7 @@ function Start() {
     suelo = document.querySelector(".suelo");
     contenedor = document.querySelector(".contenedor");
     textoScore = document.querySelector(".score");
-    dino = document.querySelector(".dino");
+    santa = document.querySelector(".santa");
     bg = document.querySelector(".bg");
     document.addEventListener("keydown", HandleKeyDown);
 }
@@ -74,7 +74,7 @@ function Start() {
 function Update() {
     if(parado) return;
     
-    MoverDinosaurio();
+    MoverSanta();
     MoverSuelo();
     MoverBG();
     DecidirCrearObstaculos();
@@ -91,27 +91,27 @@ function HandleKeyDown(ev){
 }
 
 function Saltar(){
-    if(dinoPosY === sueloY){
+    if(santaPosY === sueloY){
         saltando = true;
         velY = impulso;
-        dino.classList.remove("dino-corriendo");
+        santa.classList.remove("santa-corriendo");
     }
 }
 
-function MoverDinosaurio() {
-    dinoPosY += velY * deltaTime;
-    if(dinoPosY < sueloY){
+function MoverSanta() {
+    santaPosY += velY * deltaTime;
+    if(santaPosY < sueloY){
         
         TocarSuelo();
     }
-    dino.style.bottom = dinoPosY+"px";
+    santa.style.bottom = santaPosY+"px";
 }
 
 function TocarSuelo() {
-    dinoPosY = sueloY;
+    santaPosY = sueloY;
     velY = 0;
     if(saltando){
-        dino.classList.add("dino-corriendo");
+        santa.classList.add("santa-corriendo");
     }
     saltando = false;
 }
@@ -130,8 +130,8 @@ function CalcularDesplazamiento() {
 }
 
 function Estrellarse() {
-    dino.classList.remove("dino-corriendo");
-    dino.classList.add("dino-estrellado");
+    santa.classList.remove("santa-corriendo");
+   santa.classList.add("santa-estrellado");
     parado = true;
 }
 
@@ -204,11 +204,11 @@ function GameOver() {
 
 function DetectarColision() {
     for (var i = 0; i < obstaculos.length; i++) {
-        if(obstaculos[i].posX > dinoPosX + dino.clientWidth) {
+        if(obstaculos[i].posX > santaPosX + santa.clientWidth) {
             //EVADE
             break; //al estar en orden, no puede chocar con más
         }else{
-            if(IsCollision(dino, obstaculos[i], 10, 30, 15, 20)) {
+            if(IsCollision(santa, obstaculos[i], 10, 30, 15, 20)) {
                 GameOver();
             }
         }
