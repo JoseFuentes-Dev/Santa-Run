@@ -71,12 +71,6 @@ function Start() {
     santa.classList.add("santa-corriendo");
 
 }
-
-// document.querySelector(".restart").addEventListener("click", ()=>{
-//     console.log('click');
-//     Init();
-// });
-
 function Update() {
     if(parado) return;
     
@@ -171,18 +165,6 @@ function MoverObstaculos() {
         }else{
             obstaculos[i].posX -= CalcularDesplazamiento();
             obstaculos[i].style.left = obstaculos[i].posX+"px";
-        }
-    }
-}
-
-function MoverNubes() {
-    for (var i = nubes.length - 1; i >= 0; i--) {
-        if(nubes[i].posX < -nubes[i].clientWidth) {
-            nubes[i].parentNode.removeChild(nubes[i]);
-            nubes.splice(i, 1);
-        }else{
-            nubes[i].posX -= CalcularDesplazamiento() * velNube;
-            nubes[i].style.left = nubes[i].posX+"px";
         }
     }
 }
