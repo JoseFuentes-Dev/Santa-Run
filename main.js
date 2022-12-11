@@ -191,8 +191,9 @@ function GanarPuntos() {
 
 function GameOver() {
     Estrellarse();
-    gameOver.style.display = "block";
-    btn.style.display="block";
+    gameOver.style.bottom = "-80px";
+    btn.style.bottom="100px";
+    contenedor.style.backgroundColor='#900';
 
 }
 

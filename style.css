@@ -109,14 +109,14 @@ body{
 }
 
 .game-over{
-    display: none;
+ 
     position: absolute;
     text-align: center;
    left: 0;
-  bottom: -80px;
+  bottom: -100%;
    right: 0;
    z-index: 10;
-
+transition: all 1s ease;
 }
 img{
     width: 500px;
@@ -124,20 +124,20 @@ img{
 
 }
 .restart{
-    display: none;
     position: absolute;
     width: 100px;
     text-align: center;
-   bottom: 100px;
+   bottom:-100%;
    left: 0;
    right: 0;
    margin: auto;
    border: none;
    background: rgba(0, 0, 0, 0);
    font-size: 1em;
-z-index: 11;
+z-index: 20;
 color: #fff;
 cursor: pointer;
+transition: all 1s ease;
 }
 
 @keyframes animarSanta{
