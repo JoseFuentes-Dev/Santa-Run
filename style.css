@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to top, #1549a0, #6771b7, #9d9dcf, #cfcde7, #ffffff);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.imgtop{
+    position: relative;
+    top: 75px;
+    width: 300px;
+    
+}
+.contenedor {
+    width: 80%;
+    height: 300px;
+    margin: 0 auto;
+    
+    position: relative;
+
+    overflow: hidden;
+    border: 4px solid #fff;
+    border-radius: 20px;
+    box-shadow: 6px 10px 20px  rgba(0, 0, 0, .7);
+}
+.dino {
+    width: 84px;
+    height: 84px;
+
+    position: absolute;
+    bottom: 22px;
+    left: 42px;
+    z-index: 2;
+
+    background: url(img/Santa.png) repeat-x 0px 0px;
+    background-size: 336px 84px;
+    background-position-x: 0px;
+
+}
+
+.dino-corriendo {
+    animation: animarDino 0.25s steps(2) infinite;
+}
+.dino-estrellado {
+    background-position-x: -252px;
+}
+
+.bg{
+    width: 200%;
+    height: 100%;
+    background: url(img/BG.png);
+    background-size: contain;
+   background-size: 50% 100% ;
+    position: absolute;
+
+}
+.suelo {
+    width: 200%;
+    height: 42px;
+
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+
+    background: url(img/suelo.png) repeat-x 0px 0px;
+    background-size: 50% 42px;
+
+}
+
+.snowman{
+    width: 70px;
+    height: 96px;
+
+    position: absolute;
+    bottom: 16px;
+    left: 600px;
+    z-index: 1;
+
+    background: url(img/SnowMan.png) no-repeat;
+}
+.stone{
+    width: 98px;
+    height: 66px;
+
+    background: url(img/Stone.png) no-repeat;
+}
+
+.score{
+    width: 100px;
+    height: 30px;
+
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    z-index: 10;
+
+    color: #fff;
+    font-family: Verdana;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.game-over{
+    display: none;
+    position: absolute;
+    text-align: center;
+   left: 0;
+  bottom: -80px;
+   right: 0;
+   z-index: 10;
+}
+img{
+    width: 500px;
+    z-index: 10;
+}
+.restart{
+    display: none;
+    position: absolute;
+    width: 100px;
+    text-align: center;
+   bottom: 100px;
+   left: 0;
+   right: 0;
+   margin: auto;
+   border: none;
+   background: rgba(0, 0, 0, 0);
+   font-size: 1em;
+z-index: 11;
+color: #fff;
+cursor: pointer;
+}
+
+@keyframes animarDino{
+    from{
+        background-position-x: -84px;
+    }
+    to{
+        background-position-x: -252px;
+    }
+}
+
+/* responsive mobile -more-than: Mobile: 610px */
+@media only screen and (max-width:610px){
+    .contenedor{
+        width: 95%;
+        height: 40%;
+    }
+    .game-over{
+        bottom: 0;
+    }
+    img{
+        width: 300px;
+    }
+    .restart{
+        bottom: 105px;
+    }
+}
