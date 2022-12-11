@@ -67,6 +67,7 @@ function Start() {
     santa = document.querySelector(".santa");
     bg = document.querySelector(".bg");
     document.addEventListener("keydown", HandleKeyDown);
+    document.addEventListener("click", Saltar());
     santa.classList.add("santa-corriendo");
 
 }
@@ -94,6 +95,7 @@ function HandleKeyDown(ev){
         Saltar();
     }
 }
+
 
 function Saltar(){
     if(santaPosY === sueloY){
