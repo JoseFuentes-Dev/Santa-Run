@@ -33,6 +33,7 @@ body{
 .overbg{
 
     width: 100%;
+    height: 100%;
     position: absolute;
     height: 300px;
     z-index: 15;
@@ -117,52 +118,52 @@ body{
     text-align: right;
 }
 .your-score{
-    width: 300px;
-    height: 30px;
+    width: 100%;
     position: absolute;
     color: #fff;
-    left: 65px;
-    right: 0;
-    top: 20%;
+    text-align: center;
+    top: 15%;
     font-size: 20px;
-    margin: auto;
     z-index: 100;
     opacity: 0;
     transition: all 2s ease;
 }
-.game-over{
- 
-    position: absolute;
-    user-select: none;
-    text-align: center;
-   left: 0;
-  bottom: -200%;
-   right: 0;
-   z-index: 60;
-transition: all 1s ease;
-}
 img{
     width: 500px;
     z-index: 20;
-
 }
-.restart{
+
+.gameover-section{
+    width: 60%;
+    height: 60%;
     position: absolute;
-    width: 100px;
-    text-align: center;
-   bottom:-100%;
+    z-index: 100;
+   margin: auto;
    left: 0;
    right: 0;
-   margin: auto;
-   border: none;
-   background: rgba(0, 0, 0, 0);
-   font-size: 1em;
-z-index: 60;
-color: #fff;
-cursor: pointer;
-transition: all 1s ease;
-}
+   top: 0;
+   bottom: -200%;
+   text-align: center;
+    background: url(img/game\ over.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: all 1s ease;
 
+ }
+ .restart{
+    position: absolute;
+      top: 60%;
+      left: 0;
+      right: 0;
+      border: none;
+      background: rgba(0, 0, 0, 0);
+      font-size: 1em;
+      color: #fff;
+      cursor: pointer;
+transition: all 1s ease;
+     }
+    
 @keyframes animarSanta{
     from{
         background-position-x: -84px;
@@ -172,19 +173,22 @@ transition: all 1s ease;
     }
 }
 
-/* responsive mobile -more-than: Mobile: 610px */
-@media only screen and (max-width:610px){
+/* responsive mobile -more-than: Mobile: 540px */
+@media only screen and (max-width:540px){
     .contenedor{
         width: 95%;
-        height: 40%;
     }
-    .game-over{
-        bottom: 0;
+    .score{
+        top: 20px;
     }
-    img{
-        width: 300px;
+    .your-score{
+ font-size: 14px;
     }
-    .restart{
-        bottom: 105px;
-    }
+ .gameover-section{
+    width: 90%;
+    height: 90%;
+ }
+ .restart{
+    top: 55%;
+ }
 }

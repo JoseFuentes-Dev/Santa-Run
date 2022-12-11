@@ -56,13 +56,11 @@ let textoScore;
 let suelo;
 let gameOver;
 let bg;
-let btn;
 let over;
 let yourscore;
 
 function Start() {
-    gameOver = document.querySelector(".game-over");
-    btn = document.querySelector(".restart");
+    gameOver = document.querySelector(".gameover-section");
     suelo = document.querySelector(".suelo");
     contenedor = document.querySelector(".contenedor");
     textoScore = document.querySelector(".score");
@@ -195,8 +193,7 @@ function GanarPuntos() {
 
 function GameOver() {
     Estrellarse();
-    gameOver.style.bottom = "-80px";
-    btn.style.bottom="100px";
+    gameOver.style.bottom = "-20%";
     over.style.bottom="0";
     yourscore.style.opacity="1";
     yourscore.innerHTML = `Your score: ${score}`;
