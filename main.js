@@ -7,11 +7,14 @@ let deltaTime = 0;
 if(document.readyState === "complete" || document.readyState === "interactive"){
     setTimeout(Init, 1);
 }else{
+    
     document.addEventListener("click", Init); 
+
 }
 
 function Init() {
     time = new Date();
+
     Start();
     Loop();
 }
@@ -64,6 +67,8 @@ function Start() {
     santa = document.querySelector(".santa");
     bg = document.querySelector(".bg");
     document.addEventListener("keydown", HandleKeyDown);
+    santa.classList.add("santa-corriendo");
+
 }
 
 // document.querySelector(".restart").addEventListener("click", ()=>{
