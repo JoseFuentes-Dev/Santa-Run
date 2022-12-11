@@ -113,18 +113,30 @@ body{
     z-index: 10;
 
     color: #fff;
-    font-family: Verdana;
     font-size: 30px;
-    font-weight: bold;
     text-align: right;
 }
-
+.your-score{
+    width: 300px;
+    height: 30px;
+    position: absolute;
+    color: #fff;
+    left: 65px;
+    right: 0;
+    top: 20%;
+    font-size: 20px;
+    margin: auto;
+    z-index: 100;
+    opacity: 0;
+    transition: all 2s ease;
+}
 .game-over{
  
     position: absolute;
+    user-select: none;
     text-align: center;
    left: 0;
-  bottom: -100%;
+  bottom: -200%;
    right: 0;
    z-index: 60;
 transition: all 1s ease;

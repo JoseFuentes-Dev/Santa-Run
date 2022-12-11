@@ -58,6 +58,7 @@ let gameOver;
 let bg;
 let btn;
 let over;
+let yourscore;
 
 function Start() {
     gameOver = document.querySelector(".game-over");
@@ -68,6 +69,7 @@ function Start() {
     santa = document.querySelector(".santa");
     bg = document.querySelector(".bg");
     over = document.querySelector(".overbg");
+    yourscore = document.querySelector(".your-score");
     document.addEventListener("keydown", HandleKeyDown);
     document.addEventListener("click", Saltar());
     santa.classList.add("santa-corriendo");
@@ -196,7 +198,9 @@ function GameOver() {
     gameOver.style.bottom = "-80px";
     btn.style.bottom="100px";
     over.style.bottom="0";
-
+    yourscore.style.opacity="1";
+    yourscore.innerHTML = `Your score: ${score}`;
+    textoScore.style.display="none";
 }
 
 function DetectarColision() {
